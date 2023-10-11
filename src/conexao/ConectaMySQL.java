@@ -22,11 +22,21 @@ public class ConectaMySQL {
             //o metodo getConnction tenta iniciar a conexao com os valores passados como parametros
             conexao = DriverManager.getConnection(URL, LOGIN, SENHA);
             System.out.println("Conexão ao banco de dados bem-sucedida!");
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return conexao;
+    }
+
+    public void close(){
+        try {
+            conexao.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Conexão fechada.");
     }
 }
