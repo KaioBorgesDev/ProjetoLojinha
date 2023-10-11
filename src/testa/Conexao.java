@@ -1,5 +1,6 @@
 package testa;
 
+import comandos.ComandosProdutos;
 import conexao.ConectaMySQL;
 
 public class Conexao {
